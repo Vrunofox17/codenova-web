@@ -1,0 +1,159 @@
+.social-float {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.social-btn {
+  background-color: #bfa52a; /* amarillo dorado */
+  color: #111; /* negro */
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 0 6px rgba(191, 165, 42, 0.6);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-btn:hover {
+  background-color: #111; /* negro */
+  color: #bfa52a; /* amarillo dorado */
+  box-shadow: 0 0 12px #bfa52a;
+}
+
+/* Botón flotante */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  background-color: #444;
+}
+
+/* Estilo por defecto (modo claro) */
+body {
+  background-color: #fff;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+/* Modo oscuro */
+body.dark-mode {
+  background-color: #111;
+  color: #f0f0f0;
+}
+
+body.dark-mode a {
+  color: #ffcc00;
+}
+
+body.dark-mode .card, 
+body.dark-mode header, 
+body.dark-mode footer {
+  background-color: #222;
+  color: #fff;
+}
+
+
+.servicios-pc {
+  background: #111;
+  color: #ffd700;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.servicios-pc h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.cards-pc {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.card h3 {
+  color: #ffd700;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.95em;
+  color: #ccc;
+}
+
+.precio {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #111;
+  border: 2px solid #ffd700;
+  border-radius: 30px;
+  padding: 8px 15px;
+  color: #ffd700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  z-index: 9999;
+}
+
+.music-player button {
+  background: transparent;
+  border: none;
+  color: #ffd700;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.music-player button:hover {
+  transform: scale(1.2);
+}
+

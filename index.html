@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CODE NOVA</title>
+<style>
+ 
+ /* Colores */
+  :root {
+    --amarillo-dorado: #bfa52a; /* amarillo dorado opaco */
+    --negro: #111;
+    --blanco: #fff;
+  }
+
+  /* Reset básico */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('https://i.imgur.com/9Y3XRaE.png') repeat; /* Ejemplo de logos tech (puedes cambiarlo) */
+    background-size: 100px 100px;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--blanco);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--negro);
+  }
+
+  /* Fondo con opacidad para logos */
+  body::before {
+    content: '';
+    position: fixed;2
+    top:0; left:0; right:0; bottom:0;
+    background: url('https://i.imgur.com/9Y3XRaE.png') repeat;
+    background-size: 100px 100px;
+    opacity: 0.05;
+    z-index: -1;
+  }
+
+  /* Barra navegación */
+  nav {
+    background-color: var(--negro);
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 2px solid var(--amarillo-dorado);
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--amarillo-dorado);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 5px;
+    transition: all 0.4s ease;
+    position: relative;
+  }
+
+  /* Animación RGB en hover */
+  nav a:hover {
+    animation: rgb-glow 1.5s infinite alternate;
+    color: var(--blanco);
+  }
+
+  @keyframes rgb-glow {
+    0% { text-shadow: 0 0 5px #ff0000, 0 0 10px #00ff00, 0 0 20px #0000ff;}
+    50% { text-shadow: 0 0 10px #00ff00, 0 0 15px #0000ff, 0 0 25px #ff0000;}
+    100% { text-shadow: 0 0 5px #0000ff, 0 0 10px #ff0000, 0 0 20px #00ff00;}
+  }
+
+  /* Contenido principal */
+  main {
+    max-width: 1200px;
+    width: 90%;
+    margin: 2rem 0;
+    background: rgba(0,0,0,0.6);
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px var(--amarillo-dorado);
+  }
+
+  h1, h2 {
+    color: var(--amarillo-dorado);
+    margin-bottom: 1rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  p {
+    line-height: 1.6;
+    color: #eee;
+  }
+
+  /* Botones animados RGB para llamadas a la acción */
+  .btn-rgb {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    font-weight: 600;
+    color: var(--negro);
+    background-color: var(--amarillo-dorado);
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-rgb:hover {
+    animation: rgb-glow 1.5s infinite alternate;
+    color: var(--blanco);
+    background-color: transparent;
+    border: 2px solid var(--amarillo-dorado);
+  }
+
+</style>
+</head>
+<body>
+<nav>
+  <a href="#inicio">Inicio</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#ubicacion">Ubicación</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+ 
+<div class="music-player">
+  <button id="btn-music" aria-label="Toggle music">▶️</button>
+  <span>🎵 Música ambiental</span>
+  <audio id="audio" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/22/audio_6f1dcd1fda.mp3?filename=8-bit-retro-video-game-11331.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+</div>
+
+
+<main>
+  <section id="inicio">
+    <h1>CODE NOVA</h1>
+    <p>Bienvenido a nuestro centro especializado en desbloqueo de consolas PlayStation 2, 3 y 4, así como en servicios informáticos profesionales como backups, instalación de software y mucho más.</p>
+  </section>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <ul>
+      <li>Desbloqueo y jailbreak de consolas PlayStation 2, 3 y 4.</li>
+      <li>Instalación de HEN, software y jailbreak personalizado.</li>
+      <li>Servicios informáticos: ofimática, backups, instalación y configuración.</li>
+      <li>Asesoría técnica y soporte remoto.</li>
+    </ul>
+  </section>
+
+ <section id="ubicacion" style="padding: 40px 20px; background-color: #111; color: #bfa52a; text-align: center;">
+  <h2 style="font-size: 2rem; margin-bottom: 20px;">📍 Mi Ubicación</h2>
+  <div style="max-width: 800px; margin: 0 auto; border: 2px solid #bfa52a; border-radius: 12px; overflow: hidden; box-shadow: 0 0 15px rgba(191,165,42,0.2);">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d46705.318441963136!2d-56.05547744263264!3d-27.102900406051884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2spy!4v1748199603680!5m2!1ses-419!2spy"
+      width="100%"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p>Para consultas y pedidos, contáctanos por:</p>
+  <ul>
+    <li>📞 Teléfono: <a href="tel:+595-983-326-772" style="color: var(--amarillo-dorado); text-decoration: none;">+595-983-326-772</a></li>
+    <li>✉️ Email: <a href="mailto:wavesoft73@gmail.com" style="color: var(--amarillo-dorado); text-decoration: none;">wavesoft73@gmail.com</a></li>
+    <li>📸 Instagram: <a href="https://instagram.com/codenova3" target="_blank" rel="noopener noreferrer" style="color: var(--amarillo-dorado); text-decoration: none;">codenova3</a></li>
+  </ul>
+  <button class="btn-rgb">Llámanos ahora</button>
+</section>
+
+</main><!-- Botones sociales flotantes -->
+<div class="social-float">
+  <a href="https://instagram.com/codenova3" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-btn instagram">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm0 2h10c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3zm5 2.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9zm0 2a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm3.5-2.5a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0z"/></svg>
+  </a>
+  <a href="https://wa.me/595983326772" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-btn whatsapp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M20.52 3.48A11.887 11.887 0 0 0 12 0C5.373 0 0 5.373 0 12c0 2.118.555 4.176 1.607 6.008L0 24l6.195-1.576A11.93 11.93 0 0 0 12 24c6.627 0 12-5.373 12-12 0-1.922-.517-3.722-1.48-5.52zm-8.5 15.4a8.286 8.286 0 0 1-4.448-1.295l-.318-.189-3.686.939.984-3.586-.207-.348a8.263 8.263 0 0 1 1.21-9.997 8.244 8.244 0 0 1 5.84-2.724c4.57 0 8.28 3.708 8.28 8.277a8.29 8.29 0 0 1-8.36 8.633z"/></svg>
+  </a>
+  <a href="mailto:wavesoft73@gmail.com" aria-label="Email" class="social-btn email">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.104 0-2 .896-2 2v12c0 1.103.896 2 2 2h16c1.104 0 2-.897 2-2V6c0-1.104-.896-2-2-2zm0 2l-8 5-8-5h16zm0 12H4v-9l8 5 8-5v9z"/></svg>
+  </a>
+ 
+
+</div>
+
+<button id="darkModeToggle" class="dark-mode-toggle">🌙</button>
+
+
+
+<script>
+  const toggle = document.getElementById('darkModeToggle');
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    toggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+  });
+</script>
+<section id="precios" style="background-color: #000; color: #fff; padding: 2rem; font-family: sans-serif;">
+  <h2 style="text-align: center; color: #FFD700; font-size: 2rem;">💰 Precios por Servicio</h2>
+
+  <style>
+    .card {
+      background-color: #111;
+      border-radius: 20px;
+      padding: 1.5rem;
+      margin: 1rem auto;
+      width: 90%;
+      max-width: 600px;
+      border: 2px solid transparent;
+      transition: border 0.4s, transform 0.3s ease;
+      /* Añadí transición para movimiento */
+    }
+    .card:hover {
+      border-image: linear-gradient(90deg, red, lime, blue) 1;
+      border-width: 2px;
+      border-style: solid;
+      transform: translateY(-10px);
+      /* Movimiento hacia arriba */
+    }
+    .card h3 {
+      color: #FFD700;
+      margin-bottom: 1rem;
+    }
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .card li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+
+  <!-- Desbloqueos -->
+  <div class="card">
+    <h3>🔓 Desbloqueos</h3>
+    <ul>
+      <li>PS2 Free McBoot: <strong>Gs. 50.000</strong></li>
+      <li>PS3 HEN: <strong>Gs. 60.000</strong></li>
+      <li>PS4 Jailbreak (según versión): <strong>Gs. 110.000</strong></li>
+    </ul>
+  </div>
+
+  <!-- Mantenimiento -->
+  <div class="card">
+    <h3>🧼 Mantenimiento</h3>
+    <ul>
+      <li>Limpieza interna + pasta térmica (PS3): <strong>Gs. 120.000</strong></li>
+    </ul>
+  </div>
+
+  <!-- Instalación de Juegos -->
+  <div class="card">
+    <h3>🎮 Instalación de Juegos</h3>
+    <ul>
+      <li>PS2: <strong>Gs. 5.000 por juego</strong></li>
+      <li>PS3 (HEN): <strong>Gs. 10.000 por juego</strong></li>
+      <li>PS4: <strong>Gs. 20.000 por juego</strong></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Sección de Horarios -->
+<section id="horarios" style="background-color: #000; color: #fff; padding: 2rem; font-family: sans-serif;">
+  <h2 style="text-align: center; color: #FFD700; font-size: 2rem;">🕒 Horarios de Atención</h2>
+
+  <style>
+    .horario-card {
+      background-color: #111;
+      border-radius: 20px;
+      padding: 1.5rem;
+      margin: 1rem auto;
+      width: 90%;
+      max-width: 500px;
+      border: 2px solid transparent;
+      transition: border 0.4s, transform 0.3s ease;
+    }
+    .horario-card:hover {
+      border-image: linear-gradient(90deg, red, lime, blue) 1;
+      border-width: 2px;
+      border-style: solid;
+      transform: translateY(-10px);
+    }
+    .horario-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .horario-card li {
+      margin-bottom: 0.5rem;
+    }
+    .dia {
+      color: #FFD700;
+      font-weight: bold;
+    }
+  </style>
+
+  <div class="horario-card">
+    <ul>
+      <li><span class="dia">Lunes a Viernes:</span> 07:00 a 21:00 hs</li>
+      <li><span class="dia">Sábados:</span> 08:00 a 23:00 hs</li>
+      <li><span class="dia">Domingos y feriados:</span>10:00 a 17:00</li>
+    </ul>
+  </div>
+</section>
+<section class="servicios-pc">
+  <h2>🖥️ Servicios para PC</h2>
+  <div class="cards-pc">
+    <div class="card">
+      <h3>💻 Instalación de Windows</h3>
+      <p>Formateo y reinstalación de Windows 7, 10 u 11. Optimizado y activado.</p>
+      <span class="precio">Desde 80.000 Gs</span>
+    </div>
+    <div class="card">
+      <h3>🗂️ Backup de datos</h3>
+      <p>Respaldo de archivos personales antes de formatear o para prevenir pérdidas.</p>
+      <span class="precio">Desde 50.000 Gs</span>
+    </div>
+    <div class="card">
+      <h3>🎮 Programas y juegos en PC</h3>
+      <p>Instalación de programas esenciales y juegos compatibles con tu equipo.</p>
+      <span class="precio">Desde 10.000 Gs por programa</span>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>
